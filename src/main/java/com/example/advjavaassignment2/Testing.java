@@ -10,11 +10,11 @@ public class Testing {
 
     public static void main(String[] args) {
         try {
-
-            List<ElementDetails> uraniumDetailsList = APIUtility.searchElements("Titanium");
+//        It will take some time to retrieve data from API
+            List<ElementDetails> uraniumDetailsList = APIUtility.searchElements("");
 
             if (!uraniumDetailsList.isEmpty()) {
-                saveToJsonFile(uraniumDetailsList.get(0), "element_details.json");
+                saveToJsonFile(uraniumDetailsList.get(0), "element.json");
             } else {
                 System.out.println("Element not found.");
             }
