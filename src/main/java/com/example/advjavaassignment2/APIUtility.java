@@ -11,8 +11,6 @@ import java.util.List;
 
 public class APIUtility {
     private static final Gson gson = new Gson();
-
-    // Replace "YOUR_RAPID_API_KEY" with your actual RapidAPI key
     private static final String RAPID_API_KEY = "aef824fe4emshb12ddfcf34f9df6p1073bejsnf34b0f63d36a";
     private static final String API_ENDPOINT = "https://chemical-elements.p.rapidapi.com/";
 
