@@ -1,0 +1,38 @@
+.root {
+    -fx-background-color: #f4f4f4;
+    -fx-font: bold italic 20pt "Arial";
+    -fx-background-image: url("images/background-image.jpg");
+    -fx-background-size: cover;
+}
+
+#searchContainer {
+    -fx-padding: 20;
+    -fx-spacing: 10;
+}
+
+#searchTextField {
+    -fx-pref-width: 200;
+}
+
+#searchButton {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-pref-width: 100;
+}
+
+#resultsListView {
+    -fx-pref-width: 400;
+}
+
+#progressBar {
+    -fx-pref-width: 400;
+}
+
+#infoLabel {
+    -fx-font-weight: bold;
+}
+
+#msgLabel {
+    -fx-text-fill: #FF0000;
+    -fx-font-weight: bold;
+}
