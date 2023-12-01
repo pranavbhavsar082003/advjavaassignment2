@@ -2,111 +2,42 @@ package com.example.advjavaassignment2;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class ElementDetails {
     @SerializedName("name")
     private String name;
-
-    @SerializedName("appearance")
-    private String appearance;
-
     @SerializedName("atomic_mass")
     private double atomicMass;
-
     @SerializedName("boil")
     private double boil;
-
     @SerializedName("category")
     private String category;
-
     @SerializedName("density")
     private double density;
-
+    @SerializedName("bohr_model_image")
+    private String image;
     @SerializedName("discovered_by")
     private String discoveredBy;
+    // You can add more fields as needed
 
-    @SerializedName("melt")
-    private double melt;
+    // Constructors
 
-    @SerializedName("molar_heat")
-    private Double molarHeat; // Use Double for nullable values
+    public ElementDetails() {
+    }
 
-    @SerializedName("named_by")
-    private String namedBy;
+    public ElementDetails(String name, double atomicMass, double boil, String category, double density, String discoveredBy) {
+        this.name = name;
+        this.atomicMass = atomicMass;
+        this.boil = boil;
+        this.category = category;
+        this.density = density;
+        this.discoveredBy = discoveredBy;
+        // Add assignments for other fields if needed
+    }
 
-    @SerializedName("number")
-    private int number;
-
-    @SerializedName("period")
-    private int period;
-
-    @SerializedName("group")
-    private int group;
-
-    @SerializedName("phase")
-    private String phase;
-
-    @SerializedName("source")
-    private String source;
-
-    @SerializedName("bohr_model_image")
-    private String bohrModelImage;
-
-    @SerializedName("bohr_model_3d")
-    private String bohrModel3D;
-
-    @SerializedName("spectral_img")
-    private String spectralImg;
-
-    @SerializedName("summary")
-    private String summary;
-
-    @SerializedName("symbol")
-    private String symbol;
-
-    @SerializedName("xpos")
-    private int xpos;
-
-    @SerializedName("ypos")
-    private int ypos;
-
-    @SerializedName("wxpos")
-    private int wxpos;
-
-    @SerializedName("wypos")
-    private int wypos;
-
-    @SerializedName("shells")
-    private List<Integer> shells;
-
-    @SerializedName("electron_configuration")
-    private String electronConfiguration;
-
-    @SerializedName("electron_configuration_semantic")
-    private String electronConfigurationSemantic;
-
-    @SerializedName("electron_affinity")
-    private double electronAffinity;
-
-    @SerializedName("electronegativity_pauling")
-    private double electronegativityPauling;
-
-    @SerializedName("ionization_energies")
-    private List<Double> ionizationEnergies;
-
-    @SerializedName("cpk-hex")
-    private String cpkHex;
-
-    // Add getters for all fields
-
+    // Getters
 
     public String getName() {
         return name;
-    }
-
-    public String getAppearance() {
-        return appearance;
     }
 
     public double getAtomicMass() {
@@ -129,99 +60,14 @@ public class ElementDetails {
         return discoveredBy;
     }
 
-    public double getMelt() {
-        return melt;
+    // Add getters for other fields if needed
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s", name, category);
     }
 
-    public Double getMolarHeat() {
-        return molarHeat;
-    }
-
-    public String getNamedBy() {
-        return namedBy;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public int getPeriod() {
-        return period;
-    }
-
-    public int getGroup() {
-        return group;
-    }
-
-    public String getPhase() {
-        return phase;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public String getBohrModelImage() {
-        return bohrModelImage;
-    }
-
-    public String getBohrModel3D() {
-        return bohrModel3D;
-    }
-
-    public String getSpectralImg() {
-        return spectralImg;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public int getXpos() {
-        return xpos;
-    }
-
-    public int getYpos() {
-        return ypos;
-    }
-
-    public int getWxpos() {
-        return wxpos;
-    }
-
-    public int getWypos() {
-        return wypos;
-    }
-
-    public List<Integer> getShells() {
-        return shells;
-    }
-
-    public String getElectronConfiguration() {
-        return electronConfiguration;
-    }
-
-    public String getElectronConfigurationSemantic() {
-        return electronConfigurationSemantic;
-    }
-
-    public double getElectronAffinity() {
-        return electronAffinity;
-    }
-
-    public double getElectronegativityPauling() {
-        return electronegativityPauling;
-    }
-
-    public List<Double> getIonizationEnergies() {
-        return ionizationEnergies;
-    }
-
-    public String getCpkHex() {
-        return cpkHex;
+    public String getBohr_model_image() {
+        return image;
     }
 }

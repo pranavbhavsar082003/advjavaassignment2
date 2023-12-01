@@ -11,7 +11,7 @@ public class Testing {
     public static void main(String[] args) {
         try {
 //        It will take some time to retrieve data from API
-            List<ElementDetails> uraniumDetailsList = APIUtility.searchElements("");
+            List<ElementDetails> uraniumDetailsList = APIUtility.searchElements("Oxygen");
 
             if (!uraniumDetailsList.isEmpty()) {
                 saveToJsonFile(uraniumDetailsList.get(0), "element.json");

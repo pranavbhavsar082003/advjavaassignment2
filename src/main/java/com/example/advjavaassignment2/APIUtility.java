@@ -30,10 +30,12 @@ public class APIUtility {
 
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
+        if (response.statusCode() != 200) {
+            throw new IOException("Failed to retrieve data. HTTP Status Code: " + response.statusCode());
+        }
 
         Gson gson = new Gson();
         JsonObject jsonResponse = gson.fromJson(response.body(), JsonObject.class);
-
 
         JsonArray dataArray = jsonResponse.getAsJsonArray("data");
 
