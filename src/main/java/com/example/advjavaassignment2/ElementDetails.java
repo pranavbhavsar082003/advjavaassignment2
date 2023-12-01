@@ -31,7 +31,6 @@ public class ElementDetails {
         this.category = category;
         this.density = density;
         this.discoveredBy = discoveredBy;
-        // Add assignments for other fields if needed
     }
 
     // Getters
@@ -60,7 +59,6 @@ public class ElementDetails {
         return discoveredBy;
     }
 
-    // Add getters for other fields if needed
 
     @Override
     public String toString() {

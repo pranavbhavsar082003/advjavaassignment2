@@ -10,7 +10,7 @@ import java.util.List;
 public class ElementSearchController {
 
     @FXML
-    private TextField searchTextField;  // Ensure you have this @FXML annotation
+    private TextField searchTextField;
 
     @FXML
     private ProgressBar progressBar;
@@ -27,21 +27,36 @@ public class ElementSearchController {
     private static ElementDetails selectedElement;
 
     @FXML
+    private void initialize() {
+        // Initially hide ListView and ProgressBar
+        listView.setVisible(false);
+        progressBar.setVisible(false);
+    }
+
+    @FXML
     private void searchButtonClicked(ActionEvent actionEvent) {
         String searchTerm = searchTextField.getText().trim();
 
         try {
+            progressBar.setVisible(true);
+
             List<ElementDetails> elementList = APIUtility.searchElements(searchTerm);
 
             if (!elementList.isEmpty()) {
                 listView.getItems().setAll(elementList);
                 infoLabel.setText("Results for: " + searchTerm);
+
+                listView.setVisible(true);
+                progressBar.setVisible(false);
             } else {
                 infoLabel.setText("No results found for: " + searchTerm);
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             infoLabel.setText("Error fetching data. Please try again.");
+
+            listView.setVisible(false);
+            progressBar.setVisible(true);
         }
     }
 
